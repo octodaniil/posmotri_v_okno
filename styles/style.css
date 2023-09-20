@@ -131,7 +131,7 @@ button {
 
 .search-form__submit-button {
   align-self: flex-end;
-  padding: 6px 73.5px;
+  padding: 6px 69px;
 }
 
 .title {
@@ -157,7 +157,7 @@ button {
   position: relative;
   width: 399px;
   height: 298px;
-  overflow: hidden scroll;
+  overflow: hidden auto;
 }
 
 .content__list-item:not(:last-child) {
