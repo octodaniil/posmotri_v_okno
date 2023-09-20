@@ -1,38 +1,255 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+.content {
+  display: flex;
+  align-items: flex-end;
+  gap: 30px;
+  max-width: 1140px;
 }
 
-html {
-  block-size: 100%;
+.result__video-container {
+  position: relative;
+  width: 711px;
+  height: 386px;
+  margin-bottom: 16px;
 }
 
-.page {
-  inline-size: 1200px;
-  block-size: 100%;
-  margin: auto;
-  color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
-  font-size: 18px;
-  background-color: #1b1919;
+.result__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-h1,
-h2,
-h3,
-h4,
-p,
-ul,
-ol,
-li,
-blockquote,
+.search-form {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
 fieldset {
-  margin: 0;
-  padding: 0;
+  border: none;
 }
 
-ul,
-ol {
-  list-style: none;
+.search-form__label {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.search-form__fieldset-title {
+  margin-bottom: 5px;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.search-form__textfield {
+  border: none;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  padding: 2px 6px 2px 0;
+  color: rgba(255, 255, 255, 0.70);
+  font-size: 18px;
+  background-color: transparent;
+  appearance: none;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__textfield:active {
+  border: 1px solid #fff;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+.search-form__pseudo-checkbox {
+  position: relative;
+  width: 19px;
+  height: 19px;
+  margin-right: 5px;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.search-form__pseudo-checkbox::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  display: none;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+}
+
+.search-form__checkbox:checked+.search-form__pseudo-checkbox::after {
+  display: block;
+}
+
+.search-form__checkbox:focus-visible+.search-form__label {
+  box-shadow: 0 0 0 3px #ffffff80;
+}
+
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
+}
+
+button {
+  border: 1px solid #fff;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:active {
+  background-color: #ffffff80;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__submit-button {
+  align-self: flex-end;
+  padding: 6px 73.5px;
+}
+
+.title {
+  font-family: Oswald;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 94%;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__details {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  width: 100%;
+}
+
+.content__list {
+  position: relative;
+  width: 399px;
+  height: 298px;
+  overflow: hidden scroll;
+}
+
+.content__list-item:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.content__card-link {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.content__card-link_current {
+  background-color: #545050;
+}
+
+.content__video-card-title {
+  max-width: 180px;
+  margin-bottom: 6px;
+  font-family: Oswald;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+  text-transform: uppercase;
+  hyphens: auto;
+}
+
+.content__video-card-description-container {
+  padding: 4px 2px;
+}
+
+.content__video-card-description {
+  line-height: 16.2px;
+}
+
+.content__video-card {
+  display: flex;
+  align-items: flex-start;
+}
+
+.content__video-card:hover {
+  text-decoration: underline;
+}
+
+.content__card-link {
+  margin: 2px;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+}
+
+.content__video-card-thumbnail {
+  width: 194px;
+  height: 103px;
+}
+
+.content__video-card-description-container {
+  flex-grow: 1;
+}
+
+.more-button {
+  width: 100%;
+  margin: 2px;
+  padding: 6px 0;
+}
+
+.content__list::-webkit-scrollbar {
+  width: 3px;
+  height: 10px;
+}
+
+.content__list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.content__list::-webkit-scrollbar-thumb {
+  border: 3px solid #fff;
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  inline-size: 1px;
+  block-size: 1px;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
